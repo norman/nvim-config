@@ -44,15 +44,17 @@ for name, value in pairs(global_options) do
   vim.g[name] = value
 end
 
+-- keymaps with leader
 for _, t in ipairs(keymaps_with_leader) do
   local key = string.format("<leader>%s", t["key"])
   local command = string.format("<cmd>%s<cr>", t["cmd"])
 
-  print(key, command)
-
   vim.keymap.set("n", key, command, {desc = t["desc"]})
 end
 
+-- assign main configuration
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
+
+require("config.lazy")
