@@ -43,15 +43,15 @@ local keymaps_with_leader = {
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
--- assign global configuration
+-- Assign global configuration
 for name, value in pairs(global_options) do
   vim.g[name] = value
 end
 
--- Load plugins
+-- Load plugins using Lazy - https://github.com/folke/lazy.nvim
 require("config.lazy")
 
--- keymaps with leader
+-- Keymaps with leader
 for _, t in ipairs(keymaps_with_leader) do
   local keys = string.format("<leader>%s", t["keys"])
   local command = string.format("<cmd>%s<cr>", t["cmd"])
@@ -59,7 +59,7 @@ for _, t in ipairs(keymaps_with_leader) do
   vim.keymap.set("n", keys, command, {desc = t["desc"]})
 end
 
--- assign main configuration
+-- Assign main configuration
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
