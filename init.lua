@@ -29,8 +29,12 @@ local options = {
 }
 
 local keymaps_with_leader = {
-  {key = "s", cmd = "set nolist!",   desc = "Toggle invisible characters"},
-  {key = "n", cmd = "set nonumber!", desc = "Toggle line numbers"}
+  {keys = "s",  cmd = "set nolist!",   desc = "Toggle invisible characters"},
+  {keys = "n",  cmd = "set nonumber!", desc = "Toggle line numbers"},
+  {keys = "f",  cmd = "Telescope find_files", desc = "Telescope find files"},
+  {keys = "gf", cmd = "Telescope git_files", desc = "Telescope Git files"},
+  {keys = "lg", cmd = "Telescope live_grep", desc = "Telescope live grep"},
+  {keys = "lr", cmd = "Telescope lsp_references", desc = "Telescope LSP References"}
 }
 
 ---------------------------------------------------------------
@@ -44,17 +48,18 @@ for name, value in pairs(global_options) do
   vim.g[name] = value
 end
 
+-- Load plugins
+require("config.lazy")
+
 -- keymaps with leader
 for _, t in ipairs(keymaps_with_leader) do
-  local key = string.format("<leader>%s", t["key"])
+  local keys = string.format("<leader>%s", t["keys"])
   local command = string.format("<cmd>%s<cr>", t["cmd"])
 
-  vim.keymap.set("n", key, command, {desc = t["desc"]})
+  vim.keymap.set("n", keys, command, {desc = t["desc"]})
 end
 
 -- assign main configuration
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
-
-require("config.lazy")
