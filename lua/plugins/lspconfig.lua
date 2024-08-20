@@ -6,6 +6,14 @@ return {
       autoformat = true
     }
 
+    -- RubyLSP looks promising but it's navigation is terrible for now.
+    -- require("lspconfig").ruby_lsp.setup({
+    --   init_options = {
+    --     formatter = "rubocop",
+    --     linters = { "rubocop" },
+    --   },
+    -- })
+
     require("lspconfig").eslint.setup {}
     require("lspconfig").html.setup {}
     require("lspconfig").cssls.setup{}

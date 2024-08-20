@@ -17,6 +17,9 @@ local global_options = {
 }
 
 local options = {
+  -- Use system clipboard
+  clipboard = "unnamed",
+
   -- Insert the configured number of spaces instead of a tab
   expandtab = true,
 
@@ -32,6 +35,10 @@ local options = {
   -- Basically make spaces behave like tabs for code indentation
   smarttab = true,
 
+  -- Open new splits to the bottom right
+  splitbelow = true,
+  splitright = true,
+
   -- How many spaces does a tab represent? This should be somewhat
   -- language-dependent but I primarily use Ruby so my default is 2.
   tabstop = 2,
@@ -42,18 +49,31 @@ local options = {
   tags = "tags"
 }
 
+-- Some files don't get the right type assigned automatically, configure
+-- them explicitly here.
+local filetypes = {
+  extension = {
+    arb = "ruby"
+  },
+  filename = {
+    Guardfile = "ruby"
+  }
+}
+
 local keymaps_with_leader = {
-  { keys = "b",  cmd = "Telescope buffers",        desc = "Telescope buffers" },
-  { keys = "d",  cmd = "NvimTreeToggle",           desc = "Toggle file tree" },
-  { keys = "F",  cmd = "NvimTreeFindFile",         desc = "Locate file in tree" },
-  { keys = "f",  cmd = "Telescope find_files",     desc = "Telescope find files" },
-  { keys = "n",  cmd = "set nonumber!",            desc = "Toggle line numbers" },
-  { keys = "s",  cmd = "set nolist!",              desc = "Toggle invisible characters" },
-  { keys = "x",  cmd = "lua vim.lsp.buf.format()", desc = "LSP Autoformat" },
-  { keys = "t",  cmd = "Telescope tags",           desc = "Telescope tags" },
-  { keys = "gf", cmd = "Telescope git_files",      desc = "Telescope Git files" },
-  { keys = "lg", cmd = "Telescope live_grep",      desc = "Telescope live grep" },
-  { keys = "lr", cmd = "Telescope lsp_references", desc = "Telescope LSP References" }
+  { keys = "b",  cmd = "Telescope buffers",               desc = "Telescope buffers" },
+  { keys = "d",  cmd = "NvimTreeToggle",                  desc = "Toggle file tree" },
+  { keys = "F",  cmd = "NvimTreeFindFile",                desc = "Locate file in tree" },
+  { keys = "f",  cmd = "Telescope find_files",            desc = "Telescope find files" },
+  { keys = "n",  cmd = "set nonumber!",                   desc = "Toggle line numbers" },
+  { keys = "s",  cmd = "set nolist!",                     desc = "Toggle invisible characters" },
+  { keys = "x",  cmd = "lua vim.lsp.buf.format()",        desc = "LSP Autoformat" },
+  { keys = "t",  cmd = "Telescope lsp_workspace_symbols", desc = "LSP symbols (like ctags)" },
+  { keys = "gf", cmd = "Telescope git_files",             desc = "Telescope Git files" },
+  { keys = "lg", cmd = "Telescope live_grep",             desc = "Telescope live grep" },
+  { keys = "lr", cmd = "Telescope lsp_references",        desc = "Telescope LSP References" },
+  { keys = "N",  cmd = "TestNearest -strategy=neovim",    desc = "Run nearest test" },
+  { keys = "T",  cmd = "TestFile -strategy=neovim",       desc = "Run all tests in file" }
 }
 
 ---------------------------------------------------------------
@@ -80,6 +100,8 @@ end
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
+
+vim.filetype.add(filetypes)
 
 -- Load plugins using Lazy - https://github.com/folke/lazy.nvim
 require("config.lazy")
