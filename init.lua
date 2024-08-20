@@ -7,6 +7,9 @@
 local colorscheme = "evening"
 
 local global_options = {
+  -- Disable netrw for VimTree
+  loaded_netrw = 1,
+  loaded_netrwPlugin = 1,
   -- Use comma as the leader for keybindings
   mapleader = ","
 }
@@ -34,11 +37,13 @@ local options = {
   -- Location of ctags file. Used for basic class/function navigation and
   -- opening files by class or function name with `vim -t`. I just generate
   -- tags myself using the command line, there's no automation for that set up.
-  tags = "tags",
+  tags = "tags"
 }
 
 local keymaps_with_leader = {
   { keys = "b",  cmd = "Telescope buffers",        desc = "Telescope buffers" },
+  { keys = "d",  cmd = "NvimTreeToggle",           desc = "Toggle file tree" },
+  { keys = "F",  cmd = "NvimTreeFindFile",         desc = "Locate file in tree" },
   { keys = "f",  cmd = "Telescope find_files",     desc = "Telescope find files" },
   { keys = "n",  cmd = "set nonumber!",            desc = "Toggle line numbers" },
   { keys = "s",  cmd = "set nolist!",              desc = "Toggle invisible characters" },

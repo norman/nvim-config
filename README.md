@@ -7,7 +7,15 @@ the MIT License.
 ## Dependencies
 
 ```
-gem install solargraph
+# Better grep, needed by some plugins
 brew install ripgrep
+
+# Ruby Lanauge server
+gem install solargraph
+
+# Lua language server
 brew install lua-language-server
+
+# Eslint, HTML, JSON and CSS language servers
+brew install vscode-langservers-extracted
 ```
