@@ -32,8 +32,9 @@ local options = {
   tabstop = 2,
 
   -- Location of ctags file. Used for basic class/function navigation and
-  -- opening files by class or function name with `vim -t`.
-  tags = "./tags",
+  -- opening files by class or function name with `vim -t`. I just generate
+  -- tags myself using the command line, there's no automation for that set up.
+  tags = "tags",
 }
 
 local keymaps_with_leader = {
