@@ -38,14 +38,15 @@ local options = {
 }
 
 local keymaps_with_leader = {
-  {keys = "b",  cmd = "Telescope buffers",        desc = "Telescope buffers"},
-  {keys = "f",  cmd = "Telescope find_files",     desc = "Telescope find files"},
-  {keys = "n",  cmd = "set nonumber!",            desc = "Toggle line numbers"},
-  {keys = "s",  cmd = "set nolist!",              desc = "Toggle invisible characters"},
-  {keys = "t",  cmd = "Telescope tags",           desc = "Telescope tags"},
-  {keys = "gf", cmd = "Telescope git_files",      desc = "Telescope Git files"},
-  {keys = "lg", cmd = "Telescope live_grep",      desc = "Telescope live grep"},
-  {keys = "lr", cmd = "Telescope lsp_references", desc = "Telescope LSP References"}
+  { keys = "b",  cmd = "Telescope buffers",        desc = "Telescope buffers" },
+  { keys = "f",  cmd = "Telescope find_files",     desc = "Telescope find files" },
+  { keys = "n",  cmd = "set nonumber!",            desc = "Toggle line numbers" },
+  { keys = "s",  cmd = "set nolist!",              desc = "Toggle invisible characters" },
+  { keys = "x",  cmd = "lua vim.lsp.buf.format()", desc = "LSP Autoformat" },
+  { keys = "t",  cmd = "Telescope tags",           desc = "Telescope tags" },
+  { keys = "gf", cmd = "Telescope git_files",      desc = "Telescope Git files" },
+  { keys = "lg", cmd = "Telescope live_grep",      desc = "Telescope live grep" },
+  { keys = "lr", cmd = "Telescope lsp_references", desc = "Telescope LSP References" }
 }
 
 ---------------------------------------------------------------
@@ -68,7 +69,7 @@ for _, t in ipairs(keymaps_with_leader) do
   local keys = string.format("<leader>%s", t["keys"])
   local command = string.format("<cmd>%s<cr>", t["cmd"])
 
-  vim.keymap.set("n", keys, command, {desc = t["desc"]})
+  vim.keymap.set("n", keys, command, { desc = t["desc"] })
 end
 
 -- Assign main configuration
