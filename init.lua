@@ -7,9 +7,11 @@
 local colorscheme = "evening"
 
 local global_options = {
-  -- Disable netrw for VimTree
+  -- Disable network read/write for VimTree. I don't use it anyway.
+  -- anyway.
   loaded_netrw = 1,
   loaded_netrwPlugin = 1,
+
   -- Use comma as the leader for keybindings
   mapleader = ","
 }
@@ -34,7 +36,7 @@ local options = {
   -- language-dependent but I primarily use Ruby so my default is 2.
   tabstop = 2,
 
-  -- Location of ctags file. Used for basic class/function navigation and
+  -- Name of ctags file. Used for basic class/function navigation and
   -- opening files by class or function name with `vim -t`. I just generate
   -- tags myself using the command line, there's no automation for that set up.
   tags = "tags"
@@ -66,9 +68,6 @@ for name, value in pairs(global_options) do
   vim.g[name] = value
 end
 
--- Load plugins using Lazy - https://github.com/folke/lazy.nvim
-require("config.lazy")
-
 -- Keymaps with leader
 for _, t in ipairs(keymaps_with_leader) do
   local keys = string.format("<leader>%s", t["keys"])
@@ -81,3 +80,6 @@ end
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
+
+-- Load plugins using Lazy - https://github.com/folke/lazy.nvim
+require("config.lazy")
