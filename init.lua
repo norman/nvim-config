@@ -72,6 +72,7 @@ local keymaps_with_leader = {
   { keys = "gf", cmd = "Telescope git_files",             desc = "Telescope Git files" },
   { keys = "lg", cmd = "Telescope live_grep",             desc = "Telescope live grep" },
   { keys = "lr", cmd = "Telescope lsp_references",        desc = "Telescope LSP References" },
+  { keys = "ls", cmd = "Telescope lsp_document_symbols",  desc = "Telescope LSP doc symbols" },
   { keys = "N",  cmd = "TestNearest -strategy=neovim",    desc = "Run nearest test" },
   { keys = "T",  cmd = "TestFile -strategy=neovim",       desc = "Run all tests in file" }
 }
