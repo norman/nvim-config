@@ -1,8 +1,9 @@
----------------------------------------------------------------
----------------------------------------------------------------
---- This part of the config should all just be vanilla Lua. ---
----------------------------------------------------------------
----------------------------------------------------------------
+-- I've tried to isolate calls into NeoVim's APIS below so
+-- that this part can be vanilla Lua tables. Some additional
+-- configuration happens inside plugins - for example the
+-- colorscheme. Take a look at the files in lua/plugins/*.lua
+-- for more.
+
 local global_options = {
   -- Disable network read/write for VimTree. I don't use it anyway.
   -- anyway.
@@ -69,11 +70,7 @@ local keymaps_with_leader = {
   { keys = "T",  cmd = "TestFile -strategy=neovim",       desc = "Run all tests in file" }
 }
 
----------------------------------------------------------------
----------------------------------------------------------------
----- No more configuration after this comment, just setup. ----
----------------------------------------------------------------
----------------------------------------------------------------
+-- There's no more configuration after this comment, just setup.
 
 -- Assign global configuration
 for name, value in pairs(global_options) do

@@ -13,7 +13,5 @@ return {
       },
       indent = { enable = true },
     })
-
-    vim.api.nvim_set_hl(0, "@comment.ruby", { italic = true, force = true })
   end
 }

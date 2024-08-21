@@ -1,13 +1,17 @@
 # Norm's NeoVim configuration
 
-This is my personal NeoVim configuration.It's likely only really useful to me,
-but if you see something you find useful here you may use it under the terms of
+This is my personal NeoVim configuration. It's likely only really useful to me,
+but if you see something here that you like, may use it under the terms of
 the MIT License.
+
+The colorscheme used here requires a console with modern color support.
+I am using iTerm2. If you want to use plain old Terminal.app you'll want
+to change the colorscheme to something else.
 
 ## Dependencies
 
 ```
-# Better grep, needed by some plugins
+# A better grep app, needed by some plugins
 brew install ripgrep
 
 # Ruby Lanauge server
