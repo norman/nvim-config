@@ -6,15 +6,20 @@ return {
 
     configs.setup({
       ensure_installed = {
+        "bash",
         "css",
+        "csv",
         "html",
         "javascript",
         "json",
         "lua",
+        "luadoc",
+        "markdown",
         "ruby",
         "scss",
         "sql",
-        "yaml"
+        "tmux",
+        "yaml",
       },
       sync_install = false,
       highlight = {
