@@ -46,7 +46,10 @@ local options = {
 
   -- How many spaces does a tab represent? This should be somewhat
   -- language-dependent but I primarily use Ruby so my default is 2.
-  tabstop = 2
+  tabstop = 2,
+
+  -- I set this up ages ago and don't remember why, commenting out.
+  -- wildmode = "longest,list:longest"
 }
 
 -- Some files don't get the right type assigned automatically, configure
