@@ -3,9 +3,6 @@
 --- This part of the config should all just be vanilla Lua. ---
 ---------------------------------------------------------------
 ---------------------------------------------------------------
-
-local colorscheme = "evening"
-
 local global_options = {
   -- Disable network read/write for VimTree. I don't use it anyway.
   -- anyway.
@@ -82,7 +79,6 @@ local keymaps_with_leader = {
 ---- No more configuration after this comment, just setup. ----
 ---------------------------------------------------------------
 ---------------------------------------------------------------
-vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Assign global configuration
 for name, value in pairs(global_options) do
