@@ -3,18 +3,19 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
 
-    lspconfig.solargraph.setup {
-      cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
-      autoformat = true
-    }
+    -- lspconfig.solargraph.setup {
+    --   cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
+    --   autoformat = true
+    -- }
 
-    -- RubyLSP looks promising but it's navigation is terrible for now.
-    -- require("lspconfig").ruby_lsp.setup({
-    --   init_options = {
-    --     formatter = "rubocop",
-    --     linters = { "rubocop" },
-    --   },
-    -- })
+    -- RubyLSP looks promising and is actively maintained, I'm using this for
+    -- now despite some oddities.
+    lspconfig.ruby_lsp.setup({
+      init_options = {
+        formatter = "rubocop",
+        linters = { "rubocop" },
+      },
+    })
 
     lspconfig.eslint.setup {}
     lspconfig.html.setup {}
