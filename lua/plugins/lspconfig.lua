@@ -1,7 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    require("lspconfig").solargraph.setup {
+    local lspconfig = require("lspconfig")
+
+    lspconfig.solargraph.setup {
       cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
       autoformat = true
     }
@@ -14,11 +16,11 @@ return {
     --   },
     -- })
 
-    require("lspconfig").eslint.setup {}
-    require("lspconfig").html.setup {}
-    require("lspconfig").cssls.setup{}
+    lspconfig.eslint.setup {}
+    lspconfig.html.setup {}
+    lspconfig.cssls.setup {}
 
-    require("lspconfig").lua_ls.setup {
+    lspconfig.lua_ls.setup {
       on_init = function(client)
         local path = client.workspace_folders[1].name
         if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
