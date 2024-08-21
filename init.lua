@@ -21,8 +21,15 @@ local options = {
   -- Insert the configured number of spaces instead of a tab
   expandtab = true,
 
+  -- Use Treesitter for folding
+  foldexpr = "nvim_treesitter#foldexpr()",
+  foldmethod = "expr",
+
   -- Use line numbers
   number = true,
+
+  -- Treesitter will be set up for folding
+  foldenable = false,
 
   -- The number of space characters inserted for indentation
   shiftwidth = 2,
