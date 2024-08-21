@@ -38,12 +38,7 @@ local options = {
 
   -- How many spaces does a tab represent? This should be somewhat
   -- language-dependent but I primarily use Ruby so my default is 2.
-  tabstop = 2,
-
-  -- Name of ctags file. Used for basic class/function navigation and
-  -- opening files by class or function name with `vim -t`. I just generate
-  -- tags myself using the command line, there's no automation for that set up.
-  tags = "tags"
+  tabstop = 2
 }
 
 -- Some files don't get the right type assigned automatically, configure
