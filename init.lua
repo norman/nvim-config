@@ -75,6 +75,9 @@ local keymaps_with_leader = {
   { keys = "lr", cmd = "Telescope lsp_references",                desc = "Telescope LSP References" },
   { keys = "ls", cmd = "Telescope lsp_document_symbols",          desc = "Telescope LSP doc symbols" },
   { keys = "N",  cmd = "TestNearest -strategy=neovim",            desc = "Run nearest test" },
+  { keys = "O",  cmd = "Other",                                   desc = "Open related file" },
+  { keys = "OS", cmd = "OtherSplit",                              desc = "Open related file in split" },
+  { keys = "OV", cmd = "OtherVSplit",                             desc = "Open related file in vertical split" },
   { keys = "T",  cmd = "TestFile -strategy=neovim",               desc = "Run all tests in file" }
 }
 
