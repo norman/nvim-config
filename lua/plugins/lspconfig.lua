@@ -11,6 +11,7 @@ return {
     -- RubyLSP looks promising and is actively maintained, I'm using this for
     -- now despite some oddities.
     lspconfig.ruby_lsp.setup({
+      cmd = { os.getenv("HOME") .. "/.rbenv/shims/ruby-lsp" },
       init_options = {
         formatter = "rubocop",
         linters = { "rubocop" },
