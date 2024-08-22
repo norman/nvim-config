@@ -51,7 +51,17 @@ return {
         })
       end,
       settings = {
-        Lua = {}
+        Lua = {
+          format = {
+            enable = true,
+            defaultConfig = {
+              indent_style = "space",
+              indent_size = "2",
+              quote_style = "double",
+              trailing_table_separator = "never",
+            }
+          },
+        }
       }
     }
   end

@@ -43,7 +43,7 @@ local options = {
 
   -- How many spaces does a tab represent? This should be somewhat
   -- language-dependent but I primarily use Ruby so my default is 2.
-  tabstop = 2,
+  tabstop = 2
 
   -- I set this up ages ago and don't remember why, commenting out.
   -- wildmode = "longest,list:longest"
@@ -107,7 +107,7 @@ vim.filetype.add(filetypes)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     vim.bo[args.buf].formatexpr = nil
-  end,
+  end
 })
 
 -- Load plugins using Lazy - https://github.com/folke/lazy.nvim
