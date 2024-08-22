@@ -1,7 +1,6 @@
--- I've tried to isolate calls into NeoVim's APIS below so
--- that this part can be vanilla Lua tables. Some additional configuration
--- happens inside plugins - for example the colorscheme. Take a look at the
--- files in lua/plugins/*.lua for more.
+-- I've tried to isolate calls into NeoVim's APIS below so that this part can
+-- be vanilla Lua tables. Some additional configuration happens inside plugins
+-- . Take a look at the files in lua/plugins/*.lua for more.
 local global_options = {
   -- Disable network read/write for VimTree. I don't use it anyway.
   -- anyway.
