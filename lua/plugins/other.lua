@@ -13,6 +13,14 @@ return {
           target = "/lib/tasks/%1.rake"
         },
         {
+          pattern = "/lib/([^/]*).rb",
+          target = "/spec/lib/%1_spec.rb"
+        },
+        {
+          pattern = "/spec/lib/([^/]*)_spec.rb",
+          target = "/lib/%1.rb"
+        },
+        {
           pattern = "/app/([^/]*)/([^/]*).rb",
           target = "/spec/%1/%2_spec.rb"
         },
