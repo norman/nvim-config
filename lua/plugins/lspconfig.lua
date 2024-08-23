@@ -10,7 +10,8 @@ return {
 
     -- RubyLSP looks promising and is actively maintained, but lacks features
     -- like that Solargraph has (references for example). I assume in a few months
-    -- it will have caught up.
+    -- it will have caught up. One nice thing is supports is running tests, so you
+    -- can make it work with nvim-test to watch a spec file.
     -- lspconfig.ruby_lsp.setup({
     --   cmd = { os.getenv("HOME") .. "/.rbenv/shims/ruby-lsp" },
     --   init_options = {

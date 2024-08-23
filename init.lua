@@ -61,23 +61,23 @@ local filetypes = {
 }
 
 local keymaps_with_leader = {
-  { keys = "b",  cmd = "Telescope buffers",                       desc = "Telescope buffers" },
-  { keys = "d",  cmd = "NvimTreeToggle",                          desc = "Toggle file tree" },
-  { keys = "F",  cmd = "NvimTreeFindFile",                        desc = "Locate file in tree" },
-  { keys = "f",  cmd = "Telescope find_files",                    desc = "Telescope find files" },
-  { keys = "n",  cmd = "set nonumber!",                           desc = "Toggle line numbers" },
-  { keys = "s",  cmd = "set nolist!",                             desc = "Toggle invisible characters" },
-  { keys = "x",  cmd = "lua vim.lsp.buf.format()",                desc = "LSP Autoformat" },
-  { keys = "t",  cmd = "Telescope lsp_dynamic_workspace_symbols", desc = "LSP symbols (like ctags)" },
-  { keys = "gf", cmd = "Telescope git_files",                     desc = "Telescope Git files" },
-  { keys = "lg", cmd = "Telescope live_grep",                     desc = "Telescope live grep" },
-  { keys = "lr", cmd = "Telescope lsp_references",                desc = "Telescope LSP References" },
-  { keys = "ls", cmd = "Telescope lsp_document_symbols",          desc = "Telescope LSP doc symbols" },
-  { keys = "N",  cmd = "TestNearest -strategy=neovim",            desc = "Run nearest test" },
-  { keys = "oo", cmd = "Other",                                   desc = "Open related file" },
-  { keys = "os", cmd = "OtherSplit",                              desc = "Open related file in split" },
-  { keys = "ov", cmd = "OtherVSplit",                             desc = "Open related file in vertical split" },
-  { keys = "T",  cmd = "TestFile -strategy=neovim",               desc = "Run all tests in file" }
+  { keys = "b",  cmd = "Telescope buffers",                                  desc = "Telescope buffers" },
+  { keys = "d",  cmd = "NvimTreeToggle",                                     desc = "Toggle file tree" },
+  { keys = "F",  cmd = "NvimTreeFindFile",                                   desc = "Locate file in tree" },
+  { keys = "f",  cmd = "Telescope find_files",                               desc = "Telescope find files" },
+  { keys = "n",  cmd = "set nonumber!",                                      desc = "Toggle line numbers" },
+  { keys = "s",  cmd = "set nolist!",                                        desc = "Toggle invisible characters" },
+  { keys = "x",  cmd = "lua vim.lsp.buf.format()",                           desc = "LSP Autoformat" },
+  { keys = "t",  cmd = "Telescope lsp_dynamic_workspace_symbols",            desc = "LSP symbols (like ctags)" },
+  { keys = "gf", cmd = "Telescope git_files",                                desc = "Telescope Git files" },
+  { keys = "lg", cmd = "Telescope live_grep",                                desc = "Telescope live grep" },
+  { keys = "lr", cmd = "Telescope lsp_references",                           desc = "Telescope LSP References" },
+  { keys = "ls", cmd = "Telescope lsp_document_symbols",                     desc = "Telescope LSP doc symbols" },
+  { keys = "N",  cmd = "Neotest run",                                        desc = "Run nearest test" },
+  { keys = "oo", cmd = "Other",                                              desc = "Open related file" },
+  { keys = "os", cmd = "OtherSplit",                                         desc = "Open related file in split" },
+  { keys = "ov", cmd = "OtherVSplit",                                        desc = "Open related file in vertical split" },
+  { keys = "T",  cmd = 'lua require("neotest").run.run(vim.fn.expand("%"))', desc = "Run all tests in file" }
 }
 
 -- There's no more configuration after this comment, just setup.
