@@ -69,6 +69,7 @@ local keymaps_with_leader = {
   { keys = "s",  cmd = "set nolist!",                                        desc = "Toggle invisible characters" },
   { keys = "x",  cmd = "lua vim.lsp.buf.format()",                           desc = "LSP Autoformat" },
   { keys = "t",  cmd = "Telescope lsp_dynamic_workspace_symbols",            desc = "LSP symbols (like ctags)" },
+  { keys = "gb", cmd = "Gitsigns blame_line",                                desc = "Git blame for line" },
   { keys = "gf", cmd = "Telescope git_files",                                desc = "Telescope Git files" },
   { keys = "lg", cmd = "Telescope live_grep",                                desc = "Telescope live grep" },
   { keys = "lr", cmd = "Telescope lsp_references",                           desc = "Telescope LSP References" },
