@@ -14,8 +14,8 @@ to change the colorscheme to something else.
 # A better grep app, needed by some plugins
 brew install ripgrep
 
-# Ruby Lanauge server
-gem install solargraph
+# Ruby Langauge server (install gem or add to Gemfile)
+gem install ruby-lsp 
 
 # Lua language server
 brew install lua-language-server
