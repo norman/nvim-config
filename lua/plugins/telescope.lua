@@ -13,7 +13,7 @@ return {
       git_files = {theme = "dropdown"},
       buffers = {theme = "dropdown"},
       tags = {theme = "dropdown", only_sort_tags = true, previewer = false, show_line = false},
-      lsp_references = {theme = "cursor"}
+      lsp_references = {theme = "dropdown"}
     }
   }
 }

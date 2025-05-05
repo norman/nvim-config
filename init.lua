@@ -76,6 +76,7 @@ local keymaps_with_leader = {
   { keys = "oo", cmd = "Other",                                              desc = "Open related file" },
   { keys = "os", cmd = "OtherSplit",                                         desc = "Open related file in split" },
   { keys = "ov", cmd = "OtherVSplit",                                        desc = "Open related file in vertical split" },
+  { keys = "r",  cmd = "lua vim.lsp.buf.rename()",                           desc = "LSP Rename" },
   { keys = "s",  cmd = "set nolist!",                                        desc = "Toggle invisible characters" },
   { keys = "t",  cmd = "Telescope lsp_dynamic_workspace_symbols",            desc = "LSP symbols (like ctags)" },
   { keys = "x",  cmd = "lua vim.lsp.buf.format()",                           desc = "LSP Autoformat" }
