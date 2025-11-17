@@ -41,6 +41,9 @@ local options = {
   splitbelow = true,
   splitright = true,
 
+  -- Don't highlight crazy long longs to avoid hanging vim
+  synmaxcol = 300,
+
   -- How many spaces does a tab represent? This should be somewhat
   -- language-dependent but I primarily use Ruby so my default is 2.
   tabstop = 2
