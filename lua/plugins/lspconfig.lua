@@ -63,15 +63,15 @@ return {
             -- Tell the language server which version of Lua you're using
             -- (most likely LuaJIT in the case of Neovim)
             -- version = 'LuaJIT'
-            pvim
+            -- pvim
           },
           -- Make the server aware of Neovim runtime files
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
+              vim.env.VIMRUNTIME,
               -- Depending on the usage, you might want to add additional paths here.
-              -- "${3rd}/luv/library"
+              "${3rd}/luv/library"
               -- "${3rd}/busted/library",
             }
             -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
@@ -92,6 +92,6 @@ return {
           }
         }
       }
-    }
+    })
   end
 }
