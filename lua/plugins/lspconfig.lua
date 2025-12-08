@@ -1,21 +1,20 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("ruby_lsp")
+    vim.lsp.enable("eslint")
+    vim.lsp.enable("html")
+    vim.lsp.enable("cssls")
+    vim.lsp.enable("lua_ls")
 
-    -- lspconfig.solargraph.setup {
-    --   cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
-    --   autoformat = true
-    -- }
-
-    lspconfig.ruby_lsp.setup({
+    vim.lsp.config("ruby_lsp", {
       cmd = { "bundle", "exec", "ruby-lsp" },
       diagnostics = true,
       filetypes = { "ruby", "eruby" },
       -- root_markers = { 'Gemfile', '.git' },
       init_options = {
-        formatter = "auto",
-        linters = { "rubocop" },
+        formatter = "rubocop_internal",
+        linters = { "rubocop_internal" },
         enabledFeatures = {
           codeActions = true,
           codeLens = true,
@@ -52,11 +51,7 @@ return {
       }
     })
 
-    lspconfig.eslint.setup {}
-    lspconfig.html.setup {}
-    lspconfig.cssls.setup {}
-
-    lspconfig.lua_ls.setup {
+    vim.lsp.config("lua_ls", {
       on_init = function(client)
         local path = client.workspace_folders[1].name
         if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
@@ -68,6 +63,7 @@ return {
             -- Tell the language server which version of Lua you're using
             -- (most likely LuaJIT in the case of Neovim)
             -- version = 'LuaJIT'
+            pvim
           },
           -- Make the server aware of Neovim runtime files
           workspace = {
