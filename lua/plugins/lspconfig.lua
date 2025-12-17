@@ -47,7 +47,12 @@ return {
           excludedGems = {},
           excludedMagicComments = {}
         },
-        experimentalFeaturesEnabled = false
+        experimentalFeaturesEnabled = false,
+        addonSettings = {
+          ["Ruby LSP Rails"] = {
+            enablePendingMigrationsPrompt = false
+          }
+        }
       }
     })
 
