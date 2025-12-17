@@ -130,7 +130,7 @@ vim.diagnostic.config({
 })
 
 -- Commenting for SQL files
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.sql"},
-  command = 'setl comments=:-- commentstring=--\\ %s',
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.sql" },
+  command = "setl comments=:-- commentstring=--\\ %s"
 })
