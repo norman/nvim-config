@@ -25,6 +25,8 @@ local options = {
   -- Use line numbers
   number = true,
 
+  omnifunc = "v:lua.vim.lsp.omnifunc",
+
   -- Treesitter will be set up for folding
   foldenable = false,
 
