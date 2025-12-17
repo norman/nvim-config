@@ -19,7 +19,7 @@ local options = {
   expandtab = true,
 
   -- Use Treesitter for folding
-  foldexpr = "nvim_treesitter#foldexpr()",
+  foldexpr = "v:lua.vim.treesitter.foldexpr()",
   foldmethod = "expr",
 
   -- Use line numbers
