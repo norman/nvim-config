@@ -15,6 +15,8 @@ local options = {
   -- Use system clipboard
   clipboard = "unnamed",
 
+  completeopt = "menuone,noselect,popup",
+
   -- Insert the configured number of spaces instead of a tab
   expandtab = true,
 

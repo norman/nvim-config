@@ -11,7 +11,9 @@ return {
       cmd = { "bundle", "exec", "ruby-lsp" },
       diagnostics = true,
       filetypes = { "ruby", "eruby" },
-      -- root_markers = { 'Gemfile', '.git' },
+      on_attach = function(client, bufnr)
+        vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+      end,
       init_options = {
         formatter = "rubocop_internal",
         linters = { "rubocop_internal" },
@@ -47,7 +49,8 @@ return {
           excludedGems = {},
           excludedMagicComments = {}
         },
-        experimentalFeaturesEnabled = false,
+        -- enabling this turns on more completion functionality
+        experimentalFeaturesEnabled = true,
         addonSettings = {
           ["Ruby LSP Rails"] = {
             enablePendingMigrationsPrompt = false
