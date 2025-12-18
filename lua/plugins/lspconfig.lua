@@ -13,6 +13,30 @@ return {
       filetypes = { "ruby", "eruby" },
       on_attach = function(client, bufnr)
         vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+
+        -- The code below applies syntax highlighting hints from the LSP
+        -- server. By the time this is applied, we should probably have already
+        -- gotten high quality highlighting from Treesitter, but this will
+        -- layer in additional highlighting from Ruby LSP which may have
+        -- additional information that Treesitter doesn't provide. Note that
+        -- this highlighting is quite slow, so having Treesitter load first
+        -- makes for a better experience even if it's more work.
+
+        -- Enable document highlights when the cursor is held or moved
+        vim.api.nvim_create_autocmd({ "CursorHold", "CursorMoved" }, {
+          group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true }),
+          callback = function()
+            vim.lsp.buf.document_highlight()
+          end
+        })
+
+        -- Clear the highlights when leaving the buffer or moving the cursor off the symbol
+        vim.api.nvim_create_autocmd({ "CursorMoved", "BufLeave" }, {
+          group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true }),
+          callback = function()
+            vim.lsp.buf.clear_references()
+          end
+        })
       end,
       init_options = {
         formatter = "rubocop_internal",
