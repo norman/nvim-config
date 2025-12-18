@@ -8,7 +8,7 @@ return {
     vim.lsp.enable("lua_ls")
 
     vim.lsp.config("ruby_lsp", {
-      cmd = { "bundle", "exec", "ruby-lsp" },
+      cmd = { "ruby-lsp" },
       diagnostics = true,
       filetypes = { "ruby", "eruby" },
       on_attach = function(client, bufnr)
